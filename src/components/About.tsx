@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { User, Mail, MapPin, FileText } from 'lucide-react';
-import ports from '../assets/ports.jpg';
+import ports from '../assets/port.jpeg';
 
 interface AboutProps {
   setActiveSection: (section: string) => void;

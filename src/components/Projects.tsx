@@ -12,7 +12,7 @@ import cert4 from '../assets/python.jpg';
 import cert5 from '../assets/flutter.png';
 import cert6 from '../assets/email.png';
 import cert8 from '../assets/figma.png';
-import cert7 from '../assets/mern.jpg';
+import cert7 from '../assets/mern.png';
 
 
 interface ProjectsProps {
