@@ -4,6 +4,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import sms from '../assets/sms.png';
 import tic from '../assets/tic.png';
 import upex from '../assets/upex.png';
+import pharmacy from '../assets/pharmacy.jpg';
 //  certificate images 
 import cert1 from '../assets/cert1.png';
 import cert2 from '../assets/cert2.png';
@@ -11,8 +12,10 @@ import cert3 from '../assets/cert3.png';
 import cert4 from '../assets/python.jpg';
 import cert5 from '../assets/flutter.png';
 import cert6 from '../assets/email.png';
-import cert8 from '../assets/figma.png';
+import cert8 from '../assets/React.png';
 import cert7 from '../assets/mern.png';
+import cert9 from '../assets/NodeJS.png';
+import cert10 from '../assets/figma.png';
 
 
 interface ProjectsProps {
@@ -34,8 +37,19 @@ const projects = [
     liveUrl: 'https://student-frontend-kappa.vercel.app/admin-summary',
     githubUrl: 'https://github.com/Mandipstha-17/frontend-sms',
   },
+ {
+  id: 2,
+  title: 'Dil Maina Pharmacy Website',
+  category: 'Web App',
+  description:
+    'Responsive frontend website for a local pharmacy, showcasing services and product availability.',
+  technologies: ['React', 'Tailwind CSS'],
+  image: pharmacy,
+  liveUrl: 'https://dil-maina-pharmacy.vercel.app/',
+  githubUrl: 'https://github.com/Mandipstha-17/dil-maina-pharmacy',
+},
   {
-    id: 2,
+    id: 3,
     title: 'Tic Tac Toe Game',
     category: 'Game',
     description:
@@ -46,7 +60,7 @@ const projects = [
     githubUrl: 'https://github.com/Mandipstha-17/tic-tac-toe',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Packers and Movers Website',
     category: 'Web App',
     description:
@@ -57,6 +71,7 @@ const projects = [
     githubUrl: 'https://github.com/Mandipstha-17/Packers-and-Movers',
   },
 ];
+
 
 const certificates = [
   {
@@ -90,6 +105,14 @@ const certificates = [
   {
     id:8,
     image: cert8,
+  },
+  { 
+id:9,
+image: cert9,
+  },
+  {
+    id:10,
+    image: cert10,
   },
 
 ];
