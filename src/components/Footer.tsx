@@ -71,9 +71,9 @@ const Footer = () => {
             © {currentYear} Mandip Shrestha. All rights reserved.
           </p>
           
-          <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
+          {/* <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
             Made with <Heart size={14} className="text-red-500 mx-1" /> using React & Tailwind CSS
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>
