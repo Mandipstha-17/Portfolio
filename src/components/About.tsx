@@ -94,7 +94,7 @@ const About = ({ setActiveSection }: AboutProps) => {
                 </div>
                 <div>
                   <h3 className="text-sm text-gray-500 dark:text-gray-400">Location</h3>
-                  <p className="font-medium">Banasthali,Kathmandu</p>
+                  <p className="font-medium">Chamati,Kathmandu</p>
                 </div>
               </div>
 

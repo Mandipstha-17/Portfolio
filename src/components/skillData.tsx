@@ -12,8 +12,9 @@ import {
   SiExpress,
   SiMongodb,
   SiBootstrap,
-  SiPython,
+  // SiPython,
   SiMysql,
+  SiPostgresql,
 } from 'react-icons/si';
 
 export const skillsData = [
@@ -36,7 +37,7 @@ export const skillsData = [
       { name: 'Express.js', icon: <SiExpress size={32} color="#000000" /> },
       { name: 'MongoDB', icon: <SiMongodb size={32} color="#47A248" /> },
       { name: 'MySQL', icon: <SiMysql size={32} color="#4479A1" /> },
-      { name: 'Python', icon: <SiPython size={32} color="#3776AB" /> },
+      { name: 'Postgresql', icon: <SiPostgresql size={32} color="#336791" /> },
     ],
   },
   {

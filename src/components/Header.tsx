@@ -61,7 +61,7 @@ const Header = ({ activeSection }: HeaderProps) => {
             scrollToSection('home');
           }}
         >
-          Mandip
+          Mandip Stha
         </a>
 
         {/* Desktop Navigation */}

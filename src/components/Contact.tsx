@@ -55,7 +55,7 @@ const Contact = ({ setActiveSection }: ContactProps) => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Banasthali, Kathmandu</p>
+                  <p className="text-gray-600 dark:text-gray-400">Chamati, Kathmandu</p>
                 </div>
               </div>
               <div className="flex items-start">
