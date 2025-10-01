@@ -5,6 +5,8 @@ import sms from '../assets/sms.png';
 import tic from '../assets/tic.png';
 import upex from '../assets/upex.png';
 import pharmacy from '../assets/pharmacy.jpg';
+import hackaverse from '../assets/hackaverse.png';
+import creative from '../assets/creative.png'
 //  certificate images 
 import cert1 from '../assets/cert1.png';
 import cert2 from '../assets/cert2.png';
@@ -16,6 +18,7 @@ import cert8 from '../assets/React.png';
 import cert7 from '../assets/mern.png';
 import cert9 from '../assets/NodeJS.png';
 import cert10 from '../assets/figma.png';
+import cert11 from '../assets/30days.jpg'
 
 
 interface ProjectsProps {
@@ -26,9 +29,30 @@ const categories = ['Projects', 'Certificates'] as const;
 type Category = (typeof categories)[number];
 
 const projects = [
-  
-  {
+    {
     id: 1,
+    title: 'Creativehub Website',
+    category: 'Web App',
+    description:
+      'Official website for Creativehub. Contributed as part of the development team, focusing on UI implementation and responsive design.',
+    technologies: ['Next js', 'TypeScript', 'Tailwind CSS'],
+    image: creative,
+    liveUrl: 'https://creativehub.primeitclub.com/',
+    githubUrl: '',
+  },
+  {
+    id: 2,
+    title: 'Hackaverse Website',
+    category: 'Web App',
+    description:
+      'Official website for Hackaverse:Hack the Hassle. Contributed as part of the frontend development team, focusing on UI implementation and responsive design.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    image: hackaverse,
+    liveUrl: 'https://hackaversev2.primeitclub.com/',
+    githubUrl: '',
+  },
+  {
+    id: 3,
     title: 'Student Management System (SMS)',
     category: 'Web App',
     description:
@@ -39,7 +63,7 @@ const projects = [
     githubUrl: 'https://github.com/Mandipstha-17/frontend-sms',
   },
  {
-  id: 2,
+  id: 4,
   title: 'Dil Maina Pharmacy Website',
   category: 'Web App',
   description:
@@ -50,7 +74,7 @@ const projects = [
   githubUrl: 'https://github.com/Mandipstha-17/dil-maina-pharmacy',
 },
   {
-    id: 3,
+    id: 5,
     title: 'Tic Tac Toe Game',
     category: 'Game',
     description:
@@ -61,7 +85,7 @@ const projects = [
     githubUrl: 'https://github.com/Mandipstha-17/tic-tac-toe',
   },
   {
-    id: 4,
+    id: 6,
     title: 'Packers and Movers Website',
     category: 'Web App',
     description:
@@ -115,6 +139,10 @@ image: cert9,
     id:10,
     image: cert10,
   },
+  {
+    id:11,
+    image: cert11,
+  }
 
 ];
 
