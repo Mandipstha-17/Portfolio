@@ -26,6 +26,7 @@ const categories = ['Projects', 'Certificates'] as const;
 type Category = (typeof categories)[number];
 
 const projects = [
+  
   {
     id: 1,
     title: 'Student Management System (SMS)',

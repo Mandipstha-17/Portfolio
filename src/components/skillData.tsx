@@ -15,6 +15,7 @@ import {
   // SiPython,
   SiMysql,
   SiPostgresql,
+  SiFigma,
 } from 'react-icons/si';
 
 export const skillsData = [
@@ -41,11 +42,12 @@ export const skillsData = [
     ],
   },
   {
-    category: 'Programming',
+    category: 'Others',
     skills: [
       { name: 'C', icon: <SiC size={32} color="#A8B9CC" /> },
       { name: 'C++', icon: <SiCplusplus size={32} color="#00599C" /> },
       { name: 'DSA', icon: <span className="text-xl font-bold">DSA</span> },
+      {name: 'Figma', icon: <SiFigma size={32} color='#6B46C1'/>   }
     ],
   },
 ];

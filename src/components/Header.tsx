@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
+import GlassSurface from './GlassSurface';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface HeaderProps {
@@ -45,13 +46,8 @@ const Header = ({ activeSection }: HeaderProps) => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md py-3 shadow-sm'
-          : 'bg-transparent py-5'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <GlassSurface className={`transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a 
           href="#home" 
@@ -138,6 +134,7 @@ const Header = ({ activeSection }: HeaderProps) => {
           </nav>
         </div>
       )}
+      </GlassSurface>
     </header>
   );
 };

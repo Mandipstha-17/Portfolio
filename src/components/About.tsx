@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { User, Mail, MapPin, FileText } from 'lucide-react';
 import ports from '../assets/port.jpeg';
+import ProfileCard from './ProfileCard';
+import DecryptedText from './DecryptedText';
 
 interface AboutProps {
   setActiveSection: (section: string) => void;
@@ -39,17 +41,20 @@ const About = ({ setActiveSection }: AboutProps) => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-5/12 lg:w-4/12">
-            <div className="relative">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden relative z-10">
-                <img
-                  src={ports}
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -top-4 -left-4 -right-4 -bottom-4 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl -z-10 transform -rotate-2" />
-              <div className="absolute -top-2 -left-2 -right-2 -bottom-2 bg-white dark:bg-gray-800 rounded-2xl -z-5 transform -rotate-1" />
-            </div>
+            <ProfileCard
+              avatarUrl={ports}
+              alt="Profile"
+              className="aspect-[3/4]"
+              name="Mandip Shrestha"
+              title="Front-end Developer"
+              handle="mandipstha17"
+              status="Available for work"
+              contactText="Contact Me"
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => window.open('mailto:mandipstha17@gmail.com', '_self')}
+            />
           </div>
 
           <div className="w-full md:w-7/12 lg:w-8/12">
@@ -57,13 +62,16 @@ const About = ({ setActiveSection }: AboutProps) => {
               <h2 className="text-3xl font-bold mb-2">About Me</h2>
               <div className="w-20 h-1 bg-purple-600 dark:bg-purple-400 rounded-full mb-6"></div>
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-              I'm a passionate Front-end Developer focused on building responsive, user-friendly web applications. 
-              I specialize in creating modern, high-performance interfaces using React, TypeScript, and Tailwind CSS
+                <DecryptedText
+                  text={"I'm a passionate Front-end Developer focused on building responsive, user-friendly web applications. I specialize in creating modern, high-performance interfaces using React, TypeScript, and Tailwind CSS."}
+                  durationMs={1400}
+                />
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-               My approach blends technical excellence with a strong sense of design, ensuring that the websites I create are not only highly
-                functional but also visually engaging and user-friendly. I’m committed to continuous learning, constantly exploring new
-                 technologies and techniques to stay at the forefront of web development.
+                <DecryptedText
+                  text={"My approach blends technical excellence with a strong sense of design, ensuring that the websites I create are not only highly functional but also visually engaging and user-friendly. I’m committed to continuous learning, constantly exploring new technologies and techniques to stay at the forefront of web development."}
+                  durationMs={1600}
+                />
               </p>
             </div>
 
