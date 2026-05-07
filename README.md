@@ -1,4 +1,4 @@
-# Mandip Shrestha — Developer Portfolio
+<!-- # Mandip Shrestha — Developer Portfolio
 
 A minimal, high-performance portfolio highlighting backend system architecture, API design, and full-stack development capabilities. Built with React, TypeScript, and Tailwind CSS.
 
@@ -40,4 +40,4 @@ npm run dev
 
 - **GitHub:** [github.com/Mandipstha-17](https://github.com/Mandipstha-17)
 - **LinkedIn:** [linkedin.com/mandip-shrestha-](https://www.linkedin.com/in/mandip-shrestha-/)
-- **Email:** mandipstha17@gmail.com
+- **Email:** mandipstha17@gmail.com -->
