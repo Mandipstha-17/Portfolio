@@ -1,157 +1,101 @@
-// src/components/Experience.tsx
 import React from "react";
 
 interface ExperienceItem {
   title: string;
-  date?: string;
+  role: string;
+  date: string;
   details: string[];
   liveUrl?: string;
 }
 
-const hackathons: ExperienceItem[] = [
+const experiences: ExperienceItem[] = [
   {
-    title: "Hackaverse 2025 – Prime IT Club",
-    date: "14–15 June 2025",
+    title: "Creative Hub – Prime IT Club",
+    role: "Director",
+    date: "Sep 2025 – Present",
     details: [
-      "Built a web app in 30 hours with a team.",
-      "Contributed to both frontend and backend using React, Tailwind CSS, JavaScript, Node.js, MongoDB.",
-      "Focused on authentication, UI design, dashboard, and API integration.",
+      "Directing community-driven technical projects and overseeing the development lifecycle of club initiatives.",
+      "Engineered the frontend architecture for the CreativeHub website using Next.js, TypeScript, and Tailwind CSS.",
+      "Mentoring club members in modern web development practices and system design.",
     ],
+    liveUrl: "https://creativehub.primeitclub.com/",
   },
   {
-    title: "ACIT Tech Fest 2.0 Hackathon",
-    date: "12–13 Bhadra 2082",
+    title: "Hackaverse 2025",
+    role: "Frontend Developer",
+    date: "June 2025",
     details: [
-      "Built a web app in 24 hours under time constraints.",
-      "Contributed to both frontend and backend using React, Tailwind CSS, JavaScript, Node.js, MongoDB.",
-      "Implemented authentication, UI design, dashboard, and API integration.",
-    ],
-  },
-];
-
-const leadership: ExperienceItem = {
-  title: "Creative Hub Director – Prime IT Club",
-  date: "Sep 2025 – Present",
-  details: [
-    "Leading and managing community-driven projects and events within the club.",
-    "Coordinating teams, planning initiatives, and supporting members in technical growth.",
-  ],
-};
-
-const contributions: ExperienceItem[] = [
-  {
-    title: "Hackaverse Website",
-    details: [
-      "Contributed as a frontend developer focusing on UI development and responsive design.",
+      "Developed a full-stack application under a 30-hour time constraint, leading frontend architecture and API integration.",
+      "Architected the user authentication flow and built a responsive dashboard using React and Tailwind CSS.",
+      "Collaborated across the stack using Node.js and MongoDB to ensure seamless data delivery.",
     ],
     liveUrl: "https://hackaversev2.primeitclub.com/",
   },
   {
-    title: "CreativeHub Website",
+    title: "ACIT Tech Fest 2.0",
+    role: "Frontend Developer",
+    date: "Bhadra 2082",
     details: [
-      "Contributed as a frontend developer, implementing Next.js, TypeScript, and Tailwind CSS for production-ready features.",
+      "Built a production-ready web application in 24 hours, focusing on scalable UI components.",
+      "Implemented complex state management and responsive design patterns.",
     ],
-    liveUrl: "https://creativehub.primeitclub.com/",
   },
 ];
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Experience</h2>
-          <div className="w-20 h-1 bg-purple-600 dark:bg-purple-400 rounded-full mx-auto mb-6"></div>
-          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            Hackathons, leadership, and project contributions that shaped my journey.
+    <section id="experience" className="py-24 bg-slate-950 relative border-t border-slate-900">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold font-space text-white mb-4">Experience & Leadership</h2>
+          <p className="text-slate-400 font-outfit text-lg max-w-2xl">
+            A track record of building scalable applications and leading technical initiatives.
           </p>
         </div>
 
-        {/* Hackathon Experience */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            🏆 Hackathon Experience
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {hackathons.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow p-6"
-              >
-                <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
-                  {item.title}
-                </h4>
-                {item.date && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{item.date}</p>
-                )}
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-                  {item.details.map((point, i) => (
-                    <li key={i}>{point}</li>
+        <div className="space-y-12">
+          {experiences.map((exp, idx) => (
+            <div key={idx} className="group relative grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 md:gap-8 items-start">
+              {/* Timeline marker for desktop */}
+              <div className="hidden md:block absolute left-[24.5%] top-2 bottom-[-3rem] w-px bg-slate-800 group-last:bg-transparent" />
+              <div className="hidden md:block absolute left-[24.5%] top-2 w-2 h-2 rounded-full bg-slate-600 -translate-x-[3px] group-hover:bg-slate-300 transition-colors duration-300" />
+              
+              <div className="text-slate-500 font-space text-sm pt-1 uppercase tracking-wider">
+                {exp.date}
+              </div>
+              
+              <div className="bg-slate-900/20 border border-slate-800/50 rounded-2xl p-6 md:p-8 hover:bg-slate-900/40 hover:border-slate-700/50 transition-all duration-300">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-100 font-space">{exp.title}</h3>
+                    <p className="text-slate-400 font-medium font-outfit">{exp.role}</p>
+                  </div>
+                  {exp.liveUrl && (
+                    <a
+                      href={exp.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-700/50 px-4 py-2 rounded-full transition-colors w-fit"
+                    >
+                      View Project
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+                
+                <ul className="space-y-3">
+                  {exp.details.map((detail, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-400 font-outfit leading-relaxed">
+                      <span className="text-slate-600 mt-1.5 flex-shrink-0">▹</span>
+                      <span>{detail}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Leadership */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            🎯 Leadership
-          </h3>
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow p-6">
-            <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
-              {leadership.title}
-            </h4>
-            {leadership.date && (
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{leadership.date}</p>
-            )}
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-              {leadership.details.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Project Contributions */}
-        <div>
-          <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
-            💻 Project Contributions
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {contributions.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow p-6 flex flex-col justify-between"
-              >
-                <div>
-                  <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
-                    {item.title}
-                  </h4>
-                  {item.date && (
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{item.date}</p>
-                  )}
-                  <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 mb-4">
-                    {item.details.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-                {item.liveUrl && (
-                  <a
-                    href={item.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 px-4 py-2 w-fit bg-purple-600 text-white rounded-full text-sm font-medium hover:bg-purple-700 transition-colors"
-                  >
-                    View Live
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

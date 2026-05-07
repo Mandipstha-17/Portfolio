@@ -1,51 +1,32 @@
-// src/components/Projects.tsx
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import sms from '../assets/sms.png';
 import tic from '../assets/tic.png';
 import upex from '../assets/upex.png';
 import pharmacy from '../assets/pharmacy.jpg';
 import hackaverse from '../assets/hackaverse.png';
-import creative from '../assets/creative.png'
-//  certificate images 
-import cert1 from '../assets/cert1.png';
-import cert2 from '../assets/cert2.png';
-import cert3 from '../assets/cert3.png';
-import cert4 from '../assets/python.jpg';
-import cert5 from '../assets/flutter.png';
-import cert6 from '../assets/email.png';
-import cert8 from '../assets/React.png';
-import cert7 from '../assets/mern.png';
-import cert9 from '../assets/NodeJS.png';
-import cert10 from '../assets/figma.png';
-import cert11 from '../assets/30days.jpg'
-
+import creative from '../assets/creative.png';
 
 interface ProjectsProps {
   setActiveSection: (section: string) => void;
 }
 
-const categories = ['Projects', 'Certificates'] as const;
-type Category = (typeof categories)[number];
-
 const projects = [
-    {
+  {
     id: 1,
-    title: 'Creativehub Website',
-    category: 'Web App',
-    description:
-      'Official website for Creativehub. Contributed as part of the development team, focusing on UI implementation and responsive design.',
-    technologies: ['Next js', 'TypeScript', 'Tailwind CSS'],
+    title: 'CreativeHub Platform',
+    category: 'Full Stack',
+    description: 'Engineered the official web platform for CreativeHub, focusing on high-performance SSR and a scalable component architecture.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     image: creative,
     liveUrl: 'https://creativehub.primeitclub.com/',
     githubUrl: '',
   },
   {
     id: 2,
-    title: 'Hackaverse Website',
-    category: 'Web App',
-    description:
-      'Official website for Hackaverse:Hack the Hassle. Contributed as part of the frontend development team, focusing on UI implementation and responsive design.',
+    title: 'Hackaverse V2',
+    category: 'Frontend Architecture',
+    description: 'Led the frontend development for the Hackaverse hackathon portal. Implemented complex responsive layouts and optimized load times.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     image: hackaverse,
     liveUrl: 'https://hackaversev2.primeitclub.com/',
@@ -53,32 +34,29 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Student Management System (SMS)',
-    category: 'Web App',
-    description:
-      'MERN-based Student Management System with full CRUD operations.',
+    title: 'Student Management System',
+    category: 'Full Stack',
+    description: 'Developed a comprehensive MERN stack application for managing student data, featuring secure authentication and RESTful APIs.',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
     image: sms,
     liveUrl: 'https://student-frontend-kappa.vercel.app/admin-summary',
     githubUrl: 'https://github.com/Mandipstha-17/frontend-sms',
   },
- {
-  id: 4,
-  title: 'Dil Maina Pharmacy Website',
-  category: 'Web App',
-  description:
-    'Responsive frontend website for a local pharmacy, showcasing services and product availability.',
-  technologies: ['React', 'Tailwind CSS'],
-  image: pharmacy,
-  liveUrl: 'https://dil-maina-pharmacy.vercel.app/',
-  githubUrl: 'https://github.com/Mandipstha-17/dil-maina-pharmacy',
-},
+  {
+    id: 4,
+    title: 'Dil Maina Pharmacy',
+    category: 'Frontend',
+    description: 'Built a responsive digital presence for a local pharmacy to improve customer accessibility and showcase product availability.',
+    technologies: ['React', 'Tailwind CSS'],
+    image: pharmacy,
+    liveUrl: 'https://dil-maina-pharmacy.vercel.app/',
+    githubUrl: 'https://github.com/Mandipstha-17/dil-maina-pharmacy',
+  },
   {
     id: 5,
-    title: 'Tic Tac Toe Game',
-    category: 'Game',
-    description:
-      'Classic Tic Tac Toe game implemented using React with interactive UI.',
+    title: 'Tic Tac Toe Logic',
+    category: 'Frontend',
+    description: 'Implemented a classic game utilizing React hooks for complex state management and win-condition algorithms.',
     technologies: ['React', 'JavaScript', 'CSS'],
     image: tic,
     liveUrl: 'https://tic-tac-toe-swart-iota-52.vercel.app/',
@@ -86,69 +64,18 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Packers and Movers Website',
-    category: 'Web App',
-    description:
-      'Website for Packers and Movers service with booking system, built with HTML, CSS and JavaScript.',
+    title: 'Packers & Movers Booking',
+    category: 'Frontend',
+    description: 'Created a static booking interface for a moving service, emphasizing accessible forms and clean semantic HTML/CSS.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    image:upex,
+    image: upex,
     liveUrl: '',
     githubUrl: 'https://github.com/Mandipstha-17/Packers-and-Movers',
   },
 ];
 
-
-const certificates = [
-  {
-    id: 1,
-    image: cert1,
-  },
-  {
-    id: 2,
-    image: cert7,
-  },
-  {
-    id:3,
-    image: cert3,
-  },
-   {
-    id:4,
-    image: cert4,
-  },
-   {
-    id:5,
-    image: cert5,
-  },
-   {
-    id:6,
-    image: cert6,
-  },
-   {
-    id:7,
-    image: cert2,
-  },
-  {
-    id:8,
-    image: cert8,
-  },
-  { 
-id:9,
-image: cert9,
-  },
-  {
-    id:10,
-    image: cert10,
-  },
-  {
-    id:11,
-    image: cert11,
-  }
-
-];
-
 const Projects = ({ setActiveSection }: ProjectsProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [activeCategory, setActiveCategory] = useState<Category>('Projects');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -170,115 +97,82 @@ const Projects = ({ setActiveSection }: ProjectsProps) => {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-20 bg-white dark:bg-gray-900"
+      className="py-24 bg-slate-950 relative border-t border-slate-900"
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Projects</h2>
-          <div className="w-20 h-1 bg-purple-600 dark:bg-purple-400 rounded-full mx-auto mb-6"></div>
-          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of my recent projects and certifications, showcasing my
-            skills and experience.
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 z-0 pointer-events-none" />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold font-space text-white mb-4">Selected Works</h2>
+          <p className="text-slate-400 font-outfit text-lg max-w-2xl">
+            Recent projects demonstrating technical problem-solving and full-stack development capabilities.
           </p>
         </div>
 
-        <div className="flex justify-center gap-4 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeCategory === cat
-                  ? 'bg-purple-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-gray-700'
-              }`}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="group rounded-2xl bg-slate-900/40 border border-slate-800/60 overflow-hidden hover:border-slate-600 transition-colors duration-300 flex flex-col h-full"
             >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {activeCategory === 'Projects' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-4">
-                    <div className="flex gap-3">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                          aria-label="Live site"
-                        >
-                          <ExternalLink size={18} />
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                          aria-label="GitHub"
-                        >
-                          <Github size={18} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
+              <div className="relative overflow-hidden aspect-[16/10] border-b border-slate-800/60 bg-slate-900">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-slate-100 hover:bg-white text-slate-900 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75"
+                      aria-label="Live site"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-100 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
+                      aria-label="GitHub"
+                    >
+                      <Github size={20} />
+                    </a>
+                  )}
                 </div>
-                <div className="p-6">
-                  <span className="text-xs inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full mb-2">
+              </div>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-semibold tracking-wider uppercase text-slate-400">
                     {project.category}
                   </span>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-3 line-clamp-3">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-100 font-space group-hover:text-white transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6 font-outfit flex-1">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-800/60">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-medium text-slate-300 font-space tracking-tight"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          // Certificates 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certificates.map((cert) => (
-              <div
-                key={cert.id}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={cert.image}
-                    alt={`Certificate ${cert.id}`}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

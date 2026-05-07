@@ -1,36 +1,52 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import { ThemeProvider } from './contexts/ThemeContext';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
+import About from './components/About';
+import Footer from './components/Footer';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const handleSetActive = (section: string) => {
     setActiveSection(section);
   };
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-        <Header activeSection={activeSection} />
-        <main>
-          <Hero setActiveSection={handleSetActive} />
-          <About setActiveSection={handleSetActive} />
-          <Skills setActiveSection={handleSetActive} />
-          <Projects setActiveSection={handleSetActive} />
-          <Experience/>
-          <Contact setActiveSection={handleSetActive} />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-slate-700 selection:text-white">
+      <Header activeSection={activeSection} />
+      <main>
+        <Hero setActiveSection={handleSetActive} />
+        <Experience />
+        <Projects setActiveSection={handleSetActive} />
+        <About setActiveSection={handleSetActive} />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
