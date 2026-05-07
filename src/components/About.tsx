@@ -1,33 +1,12 @@
-import { useEffect, useRef } from 'react';
 import { FileText } from 'lucide-react';
+import { useActiveSection } from '../hooks/useActiveSection';
 
 interface AboutProps {
   setActiveSection: (section: string) => void;
 }
 
 const About = ({ setActiveSection }: AboutProps) => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActiveSection('about');
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [setActiveSection]);
+  const sectionRef = useActiveSection('about', setActiveSection);
 
   const skills = [
     { category: 'Languages', items: 'JavaScript (Node.js), TypeScript, C/C++, SQL' },
@@ -65,6 +44,7 @@ const About = ({ setActiveSection }: AboutProps) => {
             
             <div className="pt-6">
               <a 
+                // TODO: replace with direct PDF URL
                 href="https://drive.google.com/drive/u/0/folders/1BSAAJjE6wCaY3GM2yniFA-aeSrnlXiVY" 
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,8 +60,8 @@ const About = ({ setActiveSection }: AboutProps) => {
           <div className="bg-slate-900/40 border border-slate-800/60 rounded-2xl p-8 h-fit">
             <h3 className="text-xl font-bold text-slate-100 font-space mb-6">Core Technologies</h3>
             <div className="space-y-6">
-              {skills.map((skill, index) => (
-                <div key={index}>
+              {skills.map((skill) => (
+                <div key={skill.category}>
                   <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2 font-space">
                     {skill.category}
                   </h4>

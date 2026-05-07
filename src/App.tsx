@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import About from './components/About';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -41,9 +42,10 @@ function App() {
       <Header activeSection={activeSection} />
       <main>
         <Hero setActiveSection={handleSetActive} />
-        <Experience />
+        <Experience setActiveSection={handleSetActive} />
         <Projects setActiveSection={handleSetActive} />
         <About setActiveSection={handleSetActive} />
+        <Contact setActiveSection={handleSetActive} />
       </main>
       <Footer />
     </div>

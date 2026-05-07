@@ -1,11 +1,9 @@
-import { useEffect, useRef } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Lock } from 'lucide-react';
 import sms from '../assets/sms.png';
-import tic from '../assets/tic.png';
-import upex from '../assets/upex.png';
 import pharmacy from '../assets/pharmacy.jpg';
 import hackaverse from '../assets/hackaverse.png';
 import creative from '../assets/creative.png';
+import { useActiveSection } from '../hooks/useActiveSection';
 
 interface ProjectsProps {
   setActiveSection: (section: string) => void;
@@ -14,26 +12,6 @@ interface ProjectsProps {
 const projects = [
   {
     id: 1,
-    title: 'CreativeHub Platform',
-    category: 'Full Stack',
-    description: 'Engineered the official web platform for CreativeHub, focusing on high-performance SSR and a scalable component architecture.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    image: creative,
-    liveUrl: 'https://creativehub.primeitclub.com/',
-    githubUrl: '',
-  },
-  {
-    id: 2,
-    title: 'Hackaverse V2',
-    category: 'Frontend Architecture',
-    description: 'Led the frontend development for the Hackaverse hackathon portal. Implemented complex responsive layouts and optimized load times.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    image: hackaverse,
-    liveUrl: 'https://hackaversev2.primeitclub.com/',
-    githubUrl: '',
-  },
-  {
-    id: 3,
     title: 'Student Management System',
     category: 'Full Stack',
     description: 'Developed a comprehensive MERN stack application for managing student data, featuring secure authentication and RESTful APIs.',
@@ -41,6 +19,26 @@ const projects = [
     image: sms,
     liveUrl: 'https://student-frontend-kappa.vercel.app/admin-summary',
     githubUrl: 'https://github.com/Mandipstha-17/frontend-sms',
+  },
+  {
+    id: 2,
+    title: 'CreativeHub Platform',
+    category: 'Frontend',
+    description: 'Built the frontend architecture for the official CreativeHub platform using Next.js and TypeScript, focusing on SSR performance and scalable component design.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    image: creative,
+    liveUrl: 'https://creativehub.primeitclub.com/',
+    githubUrl: '',
+  },
+  {
+    id: 3,
+    title: 'Hackaverse V2',
+    category: 'Frontend',
+    description: 'Led the frontend development for the Hackaverse hackathon portal. Implemented complex responsive layouts and optimized load times.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    image: hackaverse,
+    liveUrl: 'https://hackaversev2.primeitclub.com/',
+    githubUrl: '',
   },
   {
     id: 4,
@@ -54,44 +52,18 @@ const projects = [
   },
   {
     id: 5,
-    title: 'Tic Tac Toe Logic',
-    category: 'Frontend',
-    description: 'Implemented a classic game utilizing React hooks for complex state management and win-condition algorithms.',
-    technologies: ['React', 'JavaScript', 'CSS'],
-    image: tic,
-    liveUrl: 'https://tic-tac-toe-swart-iota-52.vercel.app/',
-    githubUrl: 'https://github.com/Mandipstha-17/tic-tac-toe',
-  },
-  {
-    id: 6,
-    title: 'Packers & Movers Booking',
-    category: 'Frontend',
-    description: 'Created a static booking interface for a moving service, emphasizing accessible forms and clean semantic HTML/CSS.',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    image: upex,
+    title: 'Backend project coming soon',
+    category: 'Backend',
+    description: 'Currently architecting a new scalable microservices project. Check back soon for details.',
+    technologies: ['Node.js', 'Docker', 'PostgreSQL'],
+    image: '',
     liveUrl: '',
-    githubUrl: 'https://github.com/Mandipstha-17/Packers-and-Movers',
-  },
+    githubUrl: '',
+  }
 ];
 
 const Projects = ({ setActiveSection }: ProjectsProps) => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActiveSection('projects');
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, [setActiveSection]);
+  const sectionRef = useActiveSection('projects', setActiveSection);
 
   return (
     <section
@@ -101,7 +73,7 @@ const Projects = ({ setActiveSection }: ProjectsProps) => {
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 z-0 pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-5xl">
         <div className="mb-16">
           <h2 className="text-3xl font-bold font-space text-white mb-4">Selected Works</h2>
           <p className="text-slate-400 font-outfit text-lg max-w-2xl">
@@ -115,37 +87,54 @@ const Projects = ({ setActiveSection }: ProjectsProps) => {
               key={project.id}
               className="group rounded-2xl bg-slate-900/40 border border-slate-800/60 overflow-hidden hover:border-slate-600 transition-colors duration-300 flex flex-col h-full"
             >
-              <div className="relative overflow-hidden aspect-[16/10] border-b border-slate-800/60 bg-slate-900">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-slate-100 hover:bg-white text-slate-900 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75"
-                      aria-label="Live site"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-100 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
-                      aria-label="GitHub"
-                    >
-                      <Github size={20} />
-                    </a>
-                  )}
-                </div>
+              <div className="relative overflow-hidden aspect-[16/10] border-b border-slate-800/60 bg-slate-900 flex items-center justify-center">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-slate-800/50 flex items-center justify-center text-slate-500 font-space text-sm">
+                    Work in Progress
+                  </div>
+                )}
+                
+                {(project.liveUrl || project.githubUrl) && (
+                  <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-slate-100 hover:bg-white text-slate-900 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75"
+                        aria-label="Live site"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                    {project.githubUrl ? (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-100 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
+                        aria-label="GitHub"
+                      >
+                        <Github size={20} />
+                      </a>
+                    ) : (
+                      <div
+                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 text-slate-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150 text-sm font-medium"
+                        title="Private Repository"
+                      >
+                        <Lock size={16} />
+                        Private
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-center justify-between mb-3">

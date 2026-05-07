@@ -1,32 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useActiveSection } from '../hooks/useActiveSection';
 
 interface HeroProps {
   setActiveSection: (section: string) => void;
 }
 
 const Hero = ({ setActiveSection }: HeroProps) => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActiveSection('home');
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [setActiveSection]);
+  const sectionRef = useActiveSection('home', setActiveSection);
 
   return (
     <section
@@ -41,20 +20,20 @@ const Hero = ({ setActiveSection }: HeroProps) => {
 
       <div className="container mx-auto relative z-20">
         <div className="max-w-4xl mx-auto flex flex-col justify-center">
-          <div className="inline-block mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-sm text-sm font-medium text-slate-300 w-fit">
+          <div className="inline-block mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-sm text-sm font-medium text-slate-300 w-fit opacity-0 animate-fade-in-up [animation-delay:0ms]">
             Backend Developer
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight font-space text-white leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight font-space text-white leading-[1.1] opacity-0 animate-fade-in-up [animation-delay:100ms]">
             Building robust <br/>
             <span className="text-slate-400">backend architectures.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl font-outfit">
-            I'm Mandip Shrestha. I specialize in developing scalable, high-performance server-side applications using Node.js, focusing on API design, database architecture, and robust system integration.
+          <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl font-outfit opacity-0 animate-fade-in-up [animation-delay:200ms]">
+            I'm Mandip Shrestha — a Backend Developer specializing in Node.js, scalable APIs, and database architecture. I've shipped full-stack and frontend projects that give me end-to-end product thinking most backend developers lack.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up [animation-delay:300ms]">
             <button 
               onClick={(e) => {
                 e.preventDefault();
