@@ -21,16 +21,16 @@ const Hero = ({ setActiveSection }: HeroProps) => {
       <div className="container mx-auto relative z-20">
         <div className="max-w-4xl mx-auto flex flex-col justify-center">
           <div className="inline-block mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-sm text-sm font-medium text-slate-300 w-fit opacity-0 animate-fade-in-up [animation-delay:0ms]">
-            Backend Developer
+            Developer
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight font-space text-white leading-[1.1] opacity-0 animate-fade-in-up [animation-delay:100ms]">
-            Building robust <br/>
-            <span className="text-slate-400">backend architectures.</span>
+            Building scalable  <br/>
+            <span className="text-slate-400">and user-focused web applications.</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl font-outfit opacity-0 animate-fade-in-up [animation-delay:200ms]">
-            I'm Mandip Shrestha — a Backend Developer specializing in Node.js, scalable APIs, and database architecture. I've shipped full-stack and frontend projects that give me end-to-end product thinking most backend developers lack.
+             I'm Mandip Shrestha — a developer specializing in Node.js, APIs, databases, and modern frontend development. I build end-to-end applications with a strong focus on performance, clean architecture, and user experience.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up [animation-delay:300ms]">

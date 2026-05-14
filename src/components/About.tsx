@@ -12,7 +12,7 @@ const About = ({ setActiveSection }: AboutProps) => {
     { category: 'Languages', items: 'JavaScript (Node.js), TypeScript, C/C++, SQL' },
     { category: 'Frameworks/Libraries', items: 'Express.js, NestJS, React, Next.js' },
     { category: 'Databases & Cache', items: 'MongoDB, PostgreSQL, MySQL, Redis' },
-    { category: 'Tools & Architecture', items: 'REST APIs, Git, Docker, JWT, System Design' },
+    { category: 'Tools & Architecture', items: 'REST APIs, Git, JWT, System Design' },
   ];
 
   return (
@@ -45,7 +45,7 @@ const About = ({ setActiveSection }: AboutProps) => {
             <div className="pt-6">
               <a 
                 // TODO: replace with direct PDF URL
-                href="https://drive.google.com/drive/u/0/folders/1BSAAJjE6wCaY3GM2yniFA-aeSrnlXiVY" 
+                href="https://drive.google.com/drive/u/1/folders/1qP8ZTIIpJKN8_ZxqFGstmf47Pmj79l1C" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-slate-950 bg-white hover:bg-slate-200 px-6 py-3 rounded-full transition-colors"

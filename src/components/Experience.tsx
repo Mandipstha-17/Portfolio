@@ -15,9 +15,9 @@ const experiences: ExperienceItem[] = [
     role: "Director & Lead Developer",
     date: "Sep 2025 – Present",
     details: [
-      "Directing community-driven technical projects and overseeing the backend architecture of club initiatives.",
-      "Engineered the core API services for the CreativeHub platform using Node.js and Express.",
-      "Mentoring club members in backend development practices, database design, and REST API standards.",
+      "Worked well in a team setting, providing support and guidance.",
+      "Skilled at working independently and collaboratively in a team environment.",
+      "As a Creative Director at Prime IT Club, I have been teaching and mentoring club members, guiding them to develop their technical skills in coding, problem-solving, workshops, collaborative projects, and hands-onlearning experiences that encourage innovation, teamwork, and continuous growth in technology.",
     ],
     liveUrl: "https://creativehub.primeitclub.com/",
   },
@@ -26,15 +26,15 @@ const experiences: ExperienceItem[] = [
     role: "Frontend Developer",
     date: "June 2024",
     details: [
-      "Developed a full-stack application under a 30-hour time constraint, leading frontend architecture and API integration.",
-      "Architected the user authentication flow and built a responsive dashboard using React and Tailwind CSS.",
-      "Collaborated across the stack using Node.js and MongoDB to ensure seamless data delivery.",
+      "Developed a responsive user interface using React and Tailwind CSS",
+      "Built reusable UI components and integrated APIs to ensure seamless frontend functionality.",
+      "Collaborated with the team to deliver a clean, responsive, and user-friendly application experience..",
     ],
     liveUrl: "https://hackaversev2.primeitclub.com/",
   },
   {
     title: "ACIT Tech Fest 2.0",
-    role: "Frontend Developer",
+    role: "Fullstack Developer",
     date: "August 2025",
     details: [
       "Built a production-ready web application in 24 hours, focusing on scalable UI components.",
