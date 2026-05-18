@@ -1,7 +1,7 @@
 import { ExternalLink, Github, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import sms from '../assets/sms.png';
-import pharmacy from '../assets/pharmacy.jpg';
+import pharmacy from '../assets/pharmacy.png';
 import hackaverse from '../assets/hackaverse.png';
 import creative from '../assets/creative.png';
 import { useActiveSection } from '../hooks/useActiveSection';
