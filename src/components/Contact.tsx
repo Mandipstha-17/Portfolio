@@ -19,7 +19,7 @@ const Contact: React.FC<ContactProps> = ({ setActiveSection }) => {
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold font-space text-white mb-4">Let's build something together</h2>
           <p className="text-slate-400 font-outfit text-lg max-w-2xl mx-auto">
-            Open to backend and full-stack roles. Always up for a good engineering conversation.
+          Open to new opportunities. Let's build something.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ const Contact: React.FC<ContactProps> = ({ setActiveSection }) => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/mandip-shrestha-a77464303/"
+            href="https://www.linkedin.com/in/mandip-shrestha-/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center justify-center p-8 bg-slate-900/40 border border-slate-800 rounded-2xl hover:bg-slate-900/60 hover:border-slate-600 transition-colors duration-300 group"
