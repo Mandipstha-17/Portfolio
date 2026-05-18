@@ -121,7 +121,7 @@ const About = ({ setActiveSection }: AboutProps) => {
                 username="Mandipstha-17" 
                 colorScheme="dark"
                 theme={{
-                  dark: ['#1e293b', '#2c3e35', '#405c4f', '#567c6a', '#6D9886']
+                  dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
                 }}
                 fontSize={12}
                 blockSize={12}
