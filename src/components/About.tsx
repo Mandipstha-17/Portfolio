@@ -29,7 +29,7 @@ const About = ({ setActiveSection }: AboutProps) => {
         >
           <h2 className="text-4xl font-bold font-space text-white mb-4">About Me</h2>
           <p className="text-slate-400 font-outfit text-xl max-w-2xl">
-            A deeper dive into my engineering journey and core competencies.
+            A deeper dive into my coding journey and core competencies.
           </p>
         </motion.div>
 
