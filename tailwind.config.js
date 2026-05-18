@@ -5,9 +5,10 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
+				sans: ['Outfit', 'sans-serif'],
+				mono: ['Space Grotesk', 'monospace'],
+				space: ['Didot', '"Didot LT STD"', '"Bodoni MT"', '"Playfair Display"', 'serif'],
 				outfit: ['Outfit', 'sans-serif'],
-				space: ['"Space Grotesk"', 'sans-serif'],
 			},
 			keyframes: {
 				'fade-in-up': {
@@ -38,6 +39,10 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			colors: {
+				brand: {
+					cyan: '#6D9886',
+					amber: '#D9CAB3'
+				},
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {

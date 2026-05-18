@@ -34,7 +34,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://www.linkedin.com/in/mandip-shrestha-" 
+              href="https://www.linkedin.com/in/mandip-shrestha-/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-900 rounded-full"
