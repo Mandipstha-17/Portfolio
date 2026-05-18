@@ -29,7 +29,7 @@ const About = ({ setActiveSection }: AboutProps) => {
         >
           <h2 className="text-4xl font-bold font-space text-white mb-4">About Me</h2>
           <p className="text-slate-400 font-outfit text-xl max-w-2xl">
-            A deeper dive into my coding journey and core competencies.
+            A deeper dive into my technical journey and core competencies.
           </p>
         </motion.div>
 
@@ -42,14 +42,13 @@ const About = ({ setActiveSection }: AboutProps) => {
             className="space-y-6 text-slate-400 font-outfit text-lg leading-relaxed"
           >
             <p>
-              My journey into coding started when I realized the frontend is just the tip of the iceberg. I became fascinated with <span className="text-slate-200 font-medium">what happens behind the scenes</span>—how data flows securely, how APIs scale under load, and how architectural decisions impact product success.
+              My journey into coding started when I realized the frontend is just the tip of the iceberg. I became fascinated with <span className="text-slate-200 font-medium">what actually powers an application</span> — not just what users see, but how data moves, how systems scale, and why architecture decisions matter.
             </p>
             <p>
-              Recently, while building the <span className="text-brand-cyan font-medium">CreativeHub Website</span>, I got deep into improving how data loads on the frontend — small changes that made a real difference in performance. I enjoy working close to the database, optimizing queries and thinking about how systems should be structured as they grow.
-
+              Recently, while working on the <span className="text-brand-cyan font-medium">CreativeHub Website</span>, I got deep into improving how data loads on the frontend — small changes that made a real difference in performance. I enjoy working close to the database, optimizing queries and thinking about how systems should be structured as they grow.
             </p>
             <p>
-              Outside of building APIs, I lead the <span className="text-slate-200 font-medium">Prime IT Club</span> as the Creative Director, mentoring members and organizing technical events.
+              Outside of coding, I run the <span className="text-slate-200 font-medium">Prime IT Club</span> as <span className="text-slate-200 font-medium">Creative Director</span> — mentoring members and organizing technical events.
             </p>
             
             <div className="pt-6">

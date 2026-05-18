@@ -30,7 +30,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
       <div className="container mx-auto relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Side: Headline & Typewriter */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={textVariants}
@@ -39,16 +39,16 @@ const Hero = ({ setActiveSection }: HeroProps) => {
             <div className="mb-4 text-brand-cyan font-space text-base uppercase tracking-wider font-semibold">
               Hi, my name is Mandip Shrestha.
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight text-white leading-[1.2] font-space">
-              I build <br className="hidden md:block"/>
+              I build <br className="hidden md:block" />
               <span className="text-slate-400">
                 <TypeAnimation
                   sequence={[
-                    'with Node.js.',         200,
-                    'with TypeScript.',      200,
-                    'with React.',           200,
-                    'with Next.js.',         200,
+                    'with Node.js.', 200,
+                    'with TypeScript.', 200,
+                    'with React.', 200,
+                    'with Next.js.', 200,
                   ]}
                   wrapper="span"
                   speed={40}
@@ -56,13 +56,13 @@ const Hero = ({ setActiveSection }: HeroProps) => {
                 />
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-slate-400 mb-10 leading-relaxed max-w-lg font-outfit">
-              I specialize in Node.js, databases, and modern web frameworks to create fast, scalable, and secure applications. 
+              I specialize in Node.js, databases, and modern web frameworks to create fast, scalable, and secure applications.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 font-space text-lg">
-              <button 
+              <button
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -72,7 +72,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
                 View My Work
               </button>
 
-              <a 
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
@@ -101,7 +101,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
               </div>
               <div className="mx-auto text-slate-500 text-sm">mandip.js — bash</div>
             </div>
-            
+
             {/* Terminal Content */}
             <div className="p-6 text-slate-300 space-y-4 min-h-[250px] font-mono">
               <div className="flex">
@@ -116,8 +116,8 @@ const Hero = ({ setActiveSection }: HeroProps) => {
                   cursor={false}
                 />
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
@@ -127,7 +127,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }}>
                   {'>'} Loading skills: Node.js, TypeScript, PostgreSQL </motion.p>
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.0 }}>
-                  {'>'} Loading frameworks: React, Express, Next.js 
+                  {'>'} Loading frameworks: React, Express, Next.js
                 </motion.p>
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.8 }}>
                   {'>'} Status: Open to opportunities

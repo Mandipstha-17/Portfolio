@@ -29,9 +29,9 @@ const experiences: ExperienceItem[] = [
     role: "Frontend Developer",
     date: "June 2024",
     details: [
-      "Developed a responsive user interface using React and Tailwind CSS",
-      "Built reusable UI components and integrated APIs to ensure seamless frontend functionality.",
-      "Collaborated with the team to deliver a clean, responsive, and user-friendly application experience.",
+      "Contributed to frontend development of the Hackaverse hackathon website.",
+      "Built responsive layouts and optimized load times using React and Tailwind CSS.",
+      "Collaborated with the team to ensure seamless frontend functionality.",
     ],
     tags: ["React", "Tailwind CSS"],
     liveUrl: "https://hackaversev2.primeitclub.com/",
@@ -54,7 +54,7 @@ const Experience: React.FC<{ setActiveSection: (section: string) => void }> = ({
   return (
     <section id="experience" ref={sectionRef} className="py-24 bg-slate-950 relative border-t border-slate-900">
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,8 +68,8 @@ const Experience: React.FC<{ setActiveSection: (section: string) => void }> = ({
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <motion.div 
-              key={exp.title} 
+            <motion.div
+              key={exp.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -79,11 +79,11 @@ const Experience: React.FC<{ setActiveSection: (section: string) => void }> = ({
               {/* Timeline marker for desktop */}
               <div className="hidden md:block absolute left-[24.5%] top-2 bottom-[-3rem] w-px bg-slate-800 group-last:bg-transparent" />
               <div className="hidden md:block absolute left-[24.5%] top-2 w-2 h-2 rounded-full bg-slate-600 -translate-x-[3px] group-hover:bg-brand-cyan transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,209,0)] group-hover:shadow-[0_0_10px_rgba(0,255,209,0.5)]" />
-              
+
               <div className="text-slate-500 font-space text-base pt-1 uppercase tracking-wider">
                 {exp.date}
               </div>
-              
+
               <div className="bg-slate-900/40 border border-slate-800/50 rounded-lg p-6 md:p-8 hover:bg-slate-900/60 hover:border-brand-cyan/30 hover:-translate-y-1 transition-all duration-300 shadow-xl">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                   <div>
@@ -104,7 +104,7 @@ const Experience: React.FC<{ setActiveSection: (section: string) => void }> = ({
                     </a>
                   )}
                 </div>
-                
+
                 <ul className="space-y-3 mb-6">
                   {exp.details.map((detail, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-400 font-outfit leading-relaxed">
