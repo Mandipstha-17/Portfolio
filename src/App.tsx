@@ -42,9 +42,9 @@ function App() {
       <Header activeSection={activeSection} />
       <main>
         <Hero setActiveSection={handleSetActive} />
+        <About setActiveSection={handleSetActive} />
         <Experience setActiveSection={handleSetActive} />
         <Projects setActiveSection={handleSetActive} />
-        <About setActiveSection={handleSetActive} />
         <Contact setActiveSection={handleSetActive} />
       </main>
       <Footer />

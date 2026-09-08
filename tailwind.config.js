@@ -7,7 +7,7 @@ export default {
 			fontFamily: {
 				sans: ['Outfit', 'sans-serif'],
 				mono: ['Space Grotesk', 'monospace'],
-				space: ['Didot', '"Didot LT STD"', '"Bodoni MT"', '"Playfair Display"', 'serif'],
+				space: ['"Space Grotesk"', 'sans-serif'],
 				outfit: ['Outfit', 'sans-serif'],
 			},
 			keyframes: {
