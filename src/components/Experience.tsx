@@ -13,38 +13,28 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Creative Hub-Prime IT Club",
+    title: "Prime Creative Hub",
     role: "Creative Director",
-    date: "Sep 2025 – Present",
+    date: "2025 – Present",
     details: [
-      "Led technical direction for Prime IT Club as Creative Director.",
-      "Mentored club members in coding, problem-solving, and system design.",
-      "Organized workshops and sessions to drive innovation and teamwork.",
+      "Led 6 hands-on coding workshops and mentoring sessions on programming fundamentals and modern web development practices, with 15–20 members attending each session.",
+      "Contributed to 4 collaborative technical projects as Creative Director, fostering innovation, teamwork, and continuous skill growth among club members.",
+      "Collaborated with the frontend team to develop and maintain responsive web interfaces using modern web technologies.",
+      "Contributed to technical projects and club activities while strengthening skills in frontend development, UI/UX, and teamwork.",
     ],
-    tags: ["React", "Node.js", "Express", "MySQL"],
+    tags: ["React", "TypeScript", "Node.js", "UI/UX", "Leadership"],
     liveUrl: "https://creativehub.primeitclub.com/",
   },
   {
-    title: "Hackaverse 2025",
-    role: "Frontend Developer",
-    date: "June 2024",
+    title: "Aarambha Sanskar Vidyalaya",
+    role: "Technical Workshop Facilitator",
+    date: "3 Months",
     details: [
-      "Contributed to frontend development of the Hackaverse hackathon website.",
-      "Built responsive layouts and optimized load times using React and Tailwind CSS.",
-      "Collaborated with the team to ensure seamless frontend functionality.",
+      "Conducted hands-on technical sessions for students on programming, web development, and modern technology concepts.",
+      "Delivered interactive workshops focused on practical learning, problem-solving, and real-world applications of technology.",
+      "Guided students through technical concepts and practical exercises, adapting sessions to different levels of technical experience.",
     ],
-    tags: ["React", "Tailwind CSS"],
-    liveUrl: "https://hackaversev2.primeitclub.com/",
-  },
-  {
-    title: "ACIT Tech Fest 2.0",
-    role: "Fullstack Developer",
-    date: "August 2025",
-    details: [
-      "Built a production-ready web management application in 24 hours focusing on scalable UI.",
-      "Implemented complex state management and responsive design patterns.",
-    ],
-    tags: ["Node.js", "JavaScript", "MongoDB", "Express"],
+    tags: ["Web Development", "Programming", "Mentorship", "Problem Solving"],
   },
 ];
 
@@ -107,9 +97,9 @@ const Experience: React.FC<{ setActiveSection: (section: string) => void }> = ({
 
                 <ul className="space-y-3 mb-6">
                   {exp.details.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-400 font-outfit leading-relaxed">
-                      <span className="text-brand-cyan mt-1 flex-shrink-0 text-sm">▹</span>
-                      <span className="text-base">{detail}</span>
+                    <li key={i} className="flex items-start gap-3 text-slate-300 font-outfit text-base md:text-lg leading-relaxed">
+                      <span className="text-brand-cyan mt-1.5 flex-shrink-0 text-sm">▹</span>
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -117,7 +107,7 @@ const Experience: React.FC<{ setActiveSection: (section: string) => void }> = ({
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2">
                   {exp.tags.map(tag => (
-                    <span key={tag} className="px-4 py-1.5 rounded bg-brand-cyan/10 text-brand-cyan text-sm font-space border border-brand-cyan/20">
+                    <span key={tag} className="px-4 py-1.5 rounded bg-brand-cyan/10 text-brand-cyan text-sm md:text-base font-space border border-brand-cyan/20">
                       {tag}
                     </span>
                   ))}

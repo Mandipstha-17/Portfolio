@@ -11,13 +11,6 @@ interface AboutProps {
 const About = ({ setActiveSection }: AboutProps) => {
   const sectionRef = useActiveSection('about', setActiveSection);
 
-  const jsonSkills = `{
-  "languages": ["JavaScript", "TypeScript", "C/C++", "PHP", "SQL"],
-  "frameworks": ["Express.js", "React", "Next.js"],
-  "databases": ["MongoDB", "PostgreSQL", "MySQL"],
-  "tools": ["Git", "REST APIs", "JWT", "Figma"]
-}`;
-
   return (
     <section id="about" ref={sectionRef} className="py-24 bg-slate-950 relative border-t border-slate-900">
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
@@ -29,7 +22,7 @@ const About = ({ setActiveSection }: AboutProps) => {
         >
           <h2 className="text-4xl font-bold font-space text-white mb-4">About Me</h2>
           <p className="text-slate-400 font-outfit text-xl max-w-2xl">
-            A deeper dive into my technical journey and core competencies.
+            A deeper dive into my engineering journey and core competencies.
           </p>
         </motion.div>
 
@@ -39,16 +32,17 @@ const About = ({ setActiveSection }: AboutProps) => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 text-slate-400 font-outfit text-lg leading-relaxed"
+            className="space-y-6 text-slate-300 font-outfit text-lg md:text-xl leading-relaxed"
           >
             <p>
-              My journey into coding started when I realized the frontend is just the tip of the iceberg. I became fascinated with <span className="text-slate-200 font-medium">what actually powers an application</span> — not just what users see, but how data moves, how systems scale, and why architecture decisions matter.
+              My journey into coding started when I realized the frontend is just the tip of the iceberg. I became fascinated with <span className="text-slate-200 font-medium">what happens behind the scenes</span>—how data flows securely, how APIs scale under load, and how architectural decisions impact product success.
             </p>
             <p>
-              Recently, while working on the <span className="text-brand-cyan font-medium">CreativeHub Website</span>, I got deep into improving how data loads on the frontend — small changes that made a real difference in performance. I enjoy working close to the database, optimizing queries and thinking about how systems should be structured as they grow.
+              Recently, while building the <span className="text-brand-cyan font-medium">CreativeHub Website</span>, I got deep into improving how data loads on the frontend — small changes that made a real difference in performance. I enjoy working close to the database, optimizing queries and thinking about how systems should be structured as they grow.
+
             </p>
             <p>
-              Outside of coding, I run the <span className="text-slate-200 font-medium">Prime IT Club</span> as <span className="text-slate-200 font-medium">Creative Director</span> — mentoring members and organizing technical events.
+              Outside of building APIs, I lead the <span className="text-slate-200 font-medium">Prime IT Club</span> as the Creative Director, mentoring members and organizing technical events.
             </p>
             
             <div className="pt-6">
@@ -56,49 +50,74 @@ const About = ({ setActiveSection }: AboutProps) => {
                 href="https://drive.google.com/drive/u/1/folders/1qP8ZTIIpJKN8_ZxqFGstmf47Pmj79l1C" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-base font-space text-background bg-brand-cyan hover:bg-brand-cyan/90 px-8 py-4 rounded transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] font-bold"
+                className="inline-flex items-center gap-2.5 text-base font-space text-slate-950 bg-brand-cyan hover:bg-brand-cyan/90 px-7 py-3.5 rounded-lg transition-all shadow-lg shadow-brand-cyan/10 hover:shadow-brand-cyan/20 hover:-translate-y-0.5 font-bold"
               >
-                <FileText size={20} />
-                View_Resume.pdf
+                <FileText size={18} />
+                <span>View Resume</span>
               </a>
             </div>
           </motion.div>
 
-          {/* Skills Terminal Section */}
+          {/* Technical Competency Matrix */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-slate-950 border border-slate-800 rounded-xl shadow-2xl font-mono text-sm md:text-base overflow-hidden flex flex-col"
+            className="space-y-4"
           >
-            <div className="w-full h-10 bg-slate-900 border-b border-slate-800 flex items-center px-4 shrink-0">
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-colors">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-white font-space font-bold text-base">Backend & APIs</h4>
+                <span className="text-xs font-mono text-brand-cyan">Core Domain</span>
               </div>
-              <div className="mx-auto text-sm text-slate-500">bash</div>
+              <div className="flex flex-wrap gap-2">
+                {['Node.js', 'Express', 'RESTful APIs', 'PHP'].map((skill) => (
+                  <span key={skill} className="px-3 py-1.5 rounded-md bg-slate-800/80 text-slate-200 text-sm font-space border border-slate-700/60">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-            
-            <div className="p-6 flex-1 overflow-x-auto">
-              <div className="text-slate-300 mb-4">
-                <span className="text-brand-cyan mr-2">$</span>
-                <span className="text-slate-300">cat skills.json</span>
+
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-colors">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-white font-space font-bold text-base">Frontend & Mobile</h4>
+                <span className="text-xs font-mono text-slate-400">UI / UX</span>
               </div>
-              <pre className="text-slate-300 font-mono leading-relaxed whitespace-pre-wrap break-words">
-                <code dangerouslySetInnerHTML={{
-                  __html: jsonSkills.replace(
-                    /"([^"]+)":/g, 
-                    '<span class="text-brand-amber">"$1"</span>:'
-                  ).replace(
-                    /"([^"]+)"(?=[,\\]|\])/g, 
-                    '<span class="text-brand-cyan">"$1"</span>'
-                  )
-                }} />
-              </pre>
-              <div className="mt-4 flex">
-                <span className="text-brand-cyan mr-2">$</span>
-                <span className="animate-pulse text-slate-400">_</span>
+              <div className="flex flex-wrap gap-2">
+                {['React', 'TypeScript', 'Next.js', 'React Native', 'Tailwind CSS', 'JavaScript', 'HTML5/CSS3'].map((skill) => (
+                  <span key={skill} className="px-3 py-1.5 rounded-md bg-slate-800/80 text-slate-200 text-sm font-space border border-slate-700/60">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-colors">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-white font-space font-bold text-base">Databases & Storage</h4>
+                <span className="text-xs font-mono text-slate-400">SQL & NoSQL</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase'].map((skill) => (
+                  <span key={skill} className="px-3 py-1.5 rounded-md bg-slate-800/80 text-slate-200 text-sm font-space border border-slate-700/60">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-colors">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-white font-space font-bold text-base">Tools, Cloud & Soft Skills</h4>
+                <span className="text-xs font-mono text-slate-400">Workflow</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Git', 'Vercel', 'cPanel', 'Cloudinary', 'Team Leadership', 'Mentoring'].map((skill) => (
+                  <span key={skill} className="px-3 py-1.5 rounded-md bg-slate-800/80 text-slate-200 text-sm font-space border border-slate-700/60">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>
